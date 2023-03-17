@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EST Time Clock</title>
+</head>
+<body>
+
+	<h1>EST Time Clock</h1>
+
+	<p>The current time in EST is:</p>
+
+	<p id="time"></p>
+
+	<script>
+		function updateTime() {
+			let now = new Date();
+			let options = {timeZone: "America/New_York", hour12: false};
+			let estTime = now.toLocaleTimeString("en-US", options);
+			document.getElementById("time").textContent = estTime;
+		}
+
+		setInterval(updateTime, 1000); // Update time every second
+	</script>
+
+</body>
+</html>
